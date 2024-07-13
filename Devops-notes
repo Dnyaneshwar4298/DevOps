@@ -15,3 +15,29 @@ git add Devops-notes
 git commit -m "first commit"
 git branch -M main
 git push -u origin main
+
+->> Next Topic is How to use ignore Command <<-
+
+To ignore some files while commiting :- 
+
+Create one hidden file (.ignore) and enter file format which you want to ignore
+
+For Example:-  
+vi .ignore
+*css
+*java
+
+->> git add .ignore
+->> git commit -m "massage which you want to give"
+->> git status
+
+Create some files text java,css files and add them by running git add command.
+
+For example :-
+touch sample.txt 
+touch testing.java
+
+->> ls 
+->> git add .
+->> git status 
+->> git commit -m "massage which you want to give"
