@@ -1,0 +1,17 @@
+How to Commit ,Push & Pull From GitHub
+
+sudo su
+yum update -y
+yum install git -y
+mkdir <foldername>
+cd <foldername>
+git init
+ls -a ( to check git local repo create .git)
+git remote add origin https://github.com/Dnyaneshwar4298/DevOps.git
+touch Devops-notes
+cat >Devops-notes
+git status 
+git add Devops-notes
+git commit -m "first commit"
+git branch -M main
+git push -u origin main
