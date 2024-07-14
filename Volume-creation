@@ -1,0 +1,53 @@
+Creating volume from Dockerfile
+
+create a Dockerfile  :- vi Doackerfile
+
+and edit :- FROM ubuntu
+            VOLUME [/"volume1"]
+
+Then create images from this dockerfile
+
+->> docker build -t dockerimage .
+
+Now create a container from this image and run
+
+docker run -it --name Container1 dockerimage /bin/bash
+
+now do ls and you can see volume1
+
+create some files in volume1 
+
+->> touch file1 file2
+
+Now share volume with another container 
+
+      Container <-> container
+
+docker run -it --name container2 --privileged=true --volumes-from container1 ubuntu /bin/bash
+
+you can  create some file here and see in container1 
+
+NOw after creating container2 volume is visible whatever you do in one volume can see from the volume
+
+
+Now try to create volumes by using commands:- 
+
+( -v = as a volumes)
+
+->> docker run -it --name container3 -v /volume2 ubuntu /bin/bash
+->> ls
+->> cd volume2
+->> touch file1 file2
+
+Now create another container and you can see the volume in new container 
+
+->> docker run -it --name container4 --privileged=true --volumes-from container3 ubuntu /bin/bash
+->> cd volume2
+->> ls
+
+
+
+
+
+ 
+
