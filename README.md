@@ -7,4 +7,4 @@ If you find this project useful, please consider supporting it by:
 - **Subscribing** to updates by following me on GitHub
 
 Your support helps keep this project alive and motivates me to improve it further!
-Thanks 
+Thanks for your help
