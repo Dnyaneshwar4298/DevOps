@@ -1,0 +1,16 @@
+Difference Between AWS S3 and AWS EBS:- 
+
+AWS Storage Options:
+Amazon S3: Amazon S3 is a simple storage service offered by Amazon and it is useful for hosting website images and videos, data analytics, etc. S3 is an object-level data storage that distributes the data objects across several machines and allows the users to access the storage via the internet from any corner of the world.
+
+Amazon EBS: Unlike Amazon S3, Amazon EBS is a block-level data storage offered by Amazon. Block storage stores files in multiple volumes called blocks, which act as separate hard drives, and this storage is not accessible via the internet. Use cases include business continuity, transactional and NO SQL database, software testing, etc.
+
+
+1. Storage type
+Amazon Simple Storage Service is object storage designed for storing large numbers of user files and backups whereas Elastic block storage is block storage for Amazon EC2 compute instances and it is just similar to hard drives attached to your computers or laptops, but the only difference is that it is used for virtualized instances.
+
+2. Availability
+Both S3 and EBS gives the availability of 99.99%, but the only difference that occurs is that S3 is accessed via the internet using API’s and EBS is accessed by the single instance attached to EBS.
+
+Backup and restore
+For backup purposes, Amazon S3 uses versioning and cross-region replication whereas the backup feature in EBS is supported by snapshots and automated backup
