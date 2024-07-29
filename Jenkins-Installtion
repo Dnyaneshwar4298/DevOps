@@ -1,0 +1,50 @@
+Step 1: Update System
+First, ensure your system packages are up to date:
+
+Commands:- 
+sudo apt update
+sudo apt upgrade -y
+
+Step 2: Install Java
+Jenkins requires Java to run. Install OpenJDK (Java Development Kit):
+
+Commands:- sudo apt install openjdk-11-jdk -y
+
+Verify the installation: java -version
+
+Step 3: Add Jenkins Repository
+Add the Jenkins repository and key to your system:
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+
+
+Step 4: Install Jenkins
+Update the package list and install Jenkins:
+
+sudo apt update
+sudo apt install jenkins -y
+
+Step 5: Start and Enable Jenkins
+Start the Jenkins service and enable it to start at boot:
+
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+
+Step 6: Adjust Firewall
+Allow Jenkins to be accessed through the firewall:
+
+sudo ufw allow 8080
+sudo ufw enable
+sudo ufw status
+
+
+Step 7: Setup Jenkins
+Open your web browser and navigate to http://your_server_ip_or_domain:8080.
+You will be prompted to enter the initial admin password. To get this password, run
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
