@@ -1,0 +1,23 @@
+sudo yum install java -y
+java -version
+cd../..
+cd opt/
+yum install wget -y
+wget https://download.sonatype.com/nexus/3/nexus-3.70.1-02-java11-unix.tar.gz
+ll
+tar -xzf <tar filename>
+rm -rf <tar file name>
+mv nexus-3.70.1-02/ nexus
+ll
+adduser nexus
+visudo  
+ll
+set no password for the nexus user nexus   ALL=(ALL)    NOPASSWD:ALL
+set permission to the nexus directory - chown -R nexus:nexus /opt/nexus
+set permission to the sonatype directory - chown -R nexus:nexus /opt/sonatype-work
+add nexus as a service at boot time - vi /opt/nexus/bin/nexus.rc and add
+the following line "run_as_user="nexus"
+create a soft link ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+login as the nexus user
+cd /opt/nexus/bin/
+./nexus start
